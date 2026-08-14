@@ -53,6 +53,7 @@ const PROJECTS = [
     title: 'Residential Tower',
     category: 'Exterior Visualization',
     type: 'Exterior',
+    year: '2021-2025',
     cover: 'residential-01.jpg',
     images: ['residential-01.jpg', 'residential-02.jpg', 'residential-03.jpg'],
     tools: ['3ds Max', 'Corona Renderer', 'Photoshop'],
