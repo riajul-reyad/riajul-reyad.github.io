@@ -6,7 +6,19 @@
 <meta name="description" content="Riajul Islam — Architectural Visualizer creating photorealistic architectural imagery, interiors and exteriors.">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+
+    <button class="lightbox-prev" id="lightboxPrev">&#10094;</button>
+
+    <div class="lightbox-content">
+        <img id="lightboxImage" src="" alt="">
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+
+    <button class="lightbox-next" id="lightboxNext">&#10095;</button>
+</div><body>
 <header class="nav">
   <div class="container nav-inner">
     <a class="logo" href="index.html"><span>RIAJUL ISLAM</span><small>ARCHITECTURAL VISUALIZER</small></a>
