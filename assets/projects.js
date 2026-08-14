@@ -43,7 +43,7 @@ const PROJECTS = [
     type: 'Interior',
     year: '2026',
     cover: 'corporate-01.jpg',
-    images: ['corporate-01.jpg'],
+    images: ['corporate-01.jpg', '2.jpg'],
     tools: ['3ds Max', 'Corona Renderer', 'Photoshop'],
     description: 'A polished corporate environment focused on material detail, balanced lighting and a professional visual language.'
   },
