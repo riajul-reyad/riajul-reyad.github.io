@@ -31,7 +31,7 @@ const PROJECTS = [
     type: 'Interior',
     year: '2026',
     cover: 'modern-villa-01.jpg',
-    images: ['modern-villa-01.jpg', 'modern-villa-02.jpg', 'modern-villa-03.jpg'],
+    images: ['modern-villa-01.jpg', 'modern-villa-02.jpg', 'modern-villa-03.jpg', 'Roof (2).jpg', 'Roof (1).jpg', 'Roof (6).jpg'],
     tools: ['3ds Max', 'V-Ray', 'Photoshop'],
     description: 'A contemporary rooftop living space visualized with layered materials, ambient light and an intimate architectural mood.'
   },
