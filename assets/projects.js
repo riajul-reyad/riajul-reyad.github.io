@@ -55,7 +55,7 @@ const PROJECTS = [
     type: 'Exterior',
     year: '2026',
     cover: 'residential-01.jpg',
-    images: ['residential-01.jpg'],
+    images: ['residential-01.jpg', 'residential-02.jpg', 'residential-03.jpg'],
     tools: ['3ds Max', 'V-Ray', 'Photoshop'],
     description: 'An architectural exterior visualization emphasizing facade rhythm, natural context, atmosphere and premium presentation.'
   },
