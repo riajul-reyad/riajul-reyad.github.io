@@ -49,7 +49,137 @@
       <a href="project.html?id=${next.id}">${next.title} →</a>
     </div>`;
   if(window.observeReveals) window.observeReveals();
-})();
+  /* =========================================
+     PROJECT IMAGE LIGHTBOX
+  ========================================= */
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+  const lightboxCounter = document.getElementById('lightboxCounter');
+
+  const galleryImages = Array.from(
+    document.querySelectorAll('.gallery img')
+  );
+
+  let currentImage = 0;
+
+  function updateLightbox() {
+
+    const img = galleryImages[currentImage];
+
+    if (!img) return;
+
+    lightboxImage.src = img.src;
+    lightboxImage.alt = img.alt || '';
+
+    lightboxCounter.textContent =
+      `${String(currentImage + 1).padStart(2, '0')} / ${String(galleryImages.length).padStart(2, '0')}`;
+  }
+
+  function openLightbox(index) {
+
+    currentImage = index;
+
+    updateLightbox();
+
+    lightbox.classList.add('active');
+
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+
+    lightbox.classList.remove('active');
+
+    document.body.style.overflow = '';
+  }
+
+  function nextImage() {
+
+    currentImage =
+      (currentImage + 1) % galleryImages.length;
+
+    updateLightbox();
+  }
+
+  function previousImage() {
+
+    currentImage =
+      (currentImage - 1 + galleryImages.length) %
+      galleryImages.length;
+
+    updateLightbox();
+  }
+
+
+  /* IMAGE CLICK */
+
+  galleryImages.forEach((img, index) => {
+
+    img.style.cursor = 'zoom-in';
+
+    img.addEventListener('click', () => {
+
+      openLightbox(index);
+
+    });
+
+  });
+
+
+  /* BUTTONS */
+
+  lightboxClose.addEventListener(
+    'click',
+    closeLightbox
+  );
+
+  lightboxNext.addEventListener(
+    'click',
+    nextImage
+  );
+
+  lightboxPrev.addEventListener(
+    'click',
+    previousImage
+  );
+
+
+  /* CLICK OUTSIDE */
+
+  lightbox.addEventListener('click', (e) => {
+
+    if (e.target === lightbox) {
+
+      closeLightbox();
+
+    }
+
+  });
+
+
+  /* KEYBOARD */
+
+  document.addEventListener('keydown', (e) => {
+
+    if (!lightbox.classList.contains('active')) return;
+
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+
+    if (e.key === 'ArrowRight') {
+      nextImage();
+    }
+
+    if (e.key === 'ArrowLeft') {
+      previousImage();
+    }
+
+  });})();
 </script>
   <!-- Premium Image Lightbox -->
 <div class="lightbox" id="lightbox">
