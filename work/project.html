@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Project — Riajul Islam</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<header class="nav"><div class="container nav-inner">
+  <a class="logo" href="../index.html"><span>RIAJUL ISLAM</span><small>ARCHITECTURAL VISUALIZER</small></a>
+  <button class="menu" aria-label="Menu">☰</button>
+  <nav class="nav-links"><a href="../index.html#work">Work</a><a href="../index.html#about">About</a><a href="../index.html#services">Services</a><a href="../index.html#contact">Contact</a></nav>
+</div></header>
+
+<main id="project-page"></main>
+
+<script src="../assets/projects.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+(function(){
+  const page = document.getElementById('project-page');
+  const id = new URLSearchParams(window.location.search).get('id');
+  const index = PROJECTS.findIndex(p => p.id === id);
+  const project = PROJECTS[index];
+  if(!project){
+    page.innerHTML = '<section class="project-hero"><div class="container"><div class="eyebrow">Project not found</div><h1>Let’s go back to selected work.</h1><div class="project-nav"><a href="../index.html#work">← Back to Work</a></div></div></section>';
+    document.title='Project Not Found — Riajul Islam';
+    return;
+  }
+  document.title = `${project.title} — Riajul Islam`;
+  const tools = project.tools.map(t => `<span class="tag">${t}</span>`).join('');
+  const gallery = project.images.map((img,i) => `<div class="${project.images.length===1?'full':(i===0?'wide':'small')} reveal"><img src="../assets/images/${img}" alt="${project.title} — view ${i+1}" loading="lazy"></div>`).join('');
+  const prev = PROJECTS[(index-1+PROJECTS.length)%PROJECTS.length];
+  const next = PROJECTS[(index+1)%PROJECTS.length];
+  page.innerHTML = `
+    <section class="project-hero"><div class="container">
+      <div class="eyebrow">${project.number} — ${project.category}</div>
+      <h1>${project.title}</h1>
+      <div class="project-meta">
+        <div><div class="kicker">Tools · ${project.year}</div><div class="skills">${tools}</div></div>
+        <p>${project.description}</p>
+      </div>
+    </div></section>
+    <section class="gallery container">${gallery}</section>
+    <div class="container project-nav">
+      <a href="project.html?id=${prev.id}">← ${prev.title}</a>
+      <a href="../index.html#work">All Work</a>
+      <a href="project.html?id=${next.id}">${next.title} →</a>
+    </div>`;
+  if(window.observeReveals) window.observeReveals();
+})();
+</script>
+</body>
+</html>
