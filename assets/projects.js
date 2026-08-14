@@ -59,8 +59,8 @@ const PROJECTS = [
     description: 'An architectural exterior visualization emphasizing facade rhythm, natural context, atmosphere and premium presentation.'
   },
   {
-  id: '7',
-  number: '07',
+  id: '6',
+  number: '06',
   title: 'Bengal Rural Residence',
   category: 'Exterior Visualization',
   type: 'Exterior',
@@ -71,8 +71,8 @@ const PROJECTS = [
   description: 'A contemporary interpretation of rural living, blending traditional Bengali character with modern comfort. The design embraces natural materials, open spaces, and a strong connection with the surrounding landscape, creating a calm and welcoming retreat away from the urban environment.'
 },
 {
-    id: '8',
-    number: '08',
+    id: '7',
+    number: '07',
     title: 'Mosque & Community Center',
     category: 'Exterior Visualization',
     type: 'Exterior',
@@ -83,8 +83,8 @@ const PROJECTS = [
     description: 'A contemporary interpretation of Islamic architecture, designed to create a peaceful and welcoming space for prayer and community. The design combines elegant geometric forms, refined materials, and carefully balanced natural and artificial lighting to create a serene spiritual atmosphere.'
   },
 {
-    id: '9',
-    number: '09',
+    id: '8',
+    number: '08',
     title: 'NOIR SANCTUARY',
     category: 'Interior Visualization',
     type: 'Interior',
@@ -95,8 +95,8 @@ const PROJECTS = [
     description: 'Contemporary Luxury Bath'
   },
   {
-    id: '6',
-    number: '06',
+    id: '9',
+    number: '09',
     title: 'Café Interior',
     category: 'Hospitality Visualization',
     type: 'Interior',
